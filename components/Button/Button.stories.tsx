@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { Meta, StoryObj } from "@storybook/react";
 import { Text } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { FontAwesome } from "@expo/vector-icons";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -54,7 +54,7 @@ export const WithIcon: Story = {
     },
     children: (
       <>
-        <Icon
+        <FontAwesome
           name="check"
           size={16}
           color="#ffffff"
