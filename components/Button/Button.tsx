@@ -1,25 +1,17 @@
-import React from "react";
-import {
-  Pressable,
-  Text,
-  StyleSheet,
-  ViewStyle,
-  TextStyle,
-} from "react-native";
+import React, { ReactNode } from "react";
+import { Pressable, StyleSheet, ViewStyle } from "react-native";
 
 type ButtonProps = {
-  label: string;
   onPress: () => void;
   style?: ViewStyle;
-  textStyle?: TextStyle;
+  children: ReactNode;
   disabled?: boolean;
 };
 
 const Button: React.FC<ButtonProps> = ({
-  label,
   onPress,
   style,
-  textStyle,
+  children,
   disabled = false,
 }) => (
   <Pressable
@@ -32,13 +24,13 @@ const Button: React.FC<ButtonProps> = ({
     ]}
     disabled={disabled}
   >
-    <Text style={[styles.text, textStyle]}>{label}</Text>
+    {children}
   </Pressable>
 );
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#6200ee",
+    backgroundColor: "#e41e2b",
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 4,
@@ -53,7 +45,7 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
   disabled: {
-    backgroundColor: "#a1a1a1",
+    backgroundColor: "#717171",
   },
 });
 
