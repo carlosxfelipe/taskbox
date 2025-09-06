@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useThemeColor } from "../../hooks/useThemeColor";
 import { getContrastingTextColor } from "../../utils/colors";
+import { Icon, MaterialCommunityIconName } from "../Icon/Icon";
 
 type ThemedButtonProps = PressableProps & {
   title: string;
@@ -18,8 +19,8 @@ type ThemedButtonProps = PressableProps & {
   buttonStyle?: ViewStyle;
   lightColor?: string;
   darkColor?: string;
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
+  iconLeftName?: MaterialCommunityIconName;
+  iconRightName?: MaterialCommunityIconName;
 };
 
 export function ThemedButton({
@@ -28,8 +29,8 @@ export function ThemedButton({
   buttonStyle,
   lightColor,
   darkColor,
-  iconLeft,
-  iconRight,
+  iconLeftName,
+  iconRightName,
   disabled,
   ...rest
 }: ThemedButtonProps) {
@@ -61,11 +62,27 @@ export function ThemedButton({
       {...rest}
     >
       <View style={styles.content}>
-        {iconLeft && <View style={styles.icon}>{iconLeft}</View>}
+        {iconLeftName && (
+          <View style={styles.icon}>
+            <Icon
+              name={iconLeftName}
+              size={20}
+              color={contrastColor}
+            />
+          </View>
+        )}
         <Text style={[styles.text, { color: contrastColor }, textStyle]}>
           {title}
         </Text>
-        {iconRight && <View style={styles.icon}>{iconRight}</View>}
+        {iconRightName && (
+          <View style={styles.icon}>
+            <Icon
+              name={iconRightName}
+              size={20}
+              color={contrastColor}
+            />
+          </View>
+        )}
       </View>
     </Pressable>
   );
