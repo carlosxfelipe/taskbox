@@ -13,7 +13,7 @@ function App() {
 let AppEntryPoint = App;
 
 if (Constants.expoConfig.extra.storybookEnabled === "true") {
-  AppEntryPoint = require("./.storybook").default;
+  AppEntryPoint = require("../.storybook").default;
 }
 
 const styles = StyleSheet.create({
