@@ -12,9 +12,8 @@ const StarterComponent = () => (
         }}
         onPress={() =>
           Linking.openURL(
-            "https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/"
-          )
-        }
+            "https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/",
+          )}
       >
         tutorial
       </Text>{" "}
