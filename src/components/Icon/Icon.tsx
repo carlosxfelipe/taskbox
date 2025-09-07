@@ -2,8 +2,9 @@ import React, { ComponentProps } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export type MaterialCommunityIconName =
-  ComponentProps<typeof MaterialCommunityIcons>["name"];
+export type MaterialCommunityIconName = ComponentProps<
+  typeof MaterialCommunityIcons
+>["name"];
 
 type IconProps = {
   name: MaterialCommunityIconName;

@@ -1,26 +1,32 @@
-import { Linking, Text, View } from "react-native";
+import { Linking, View } from "react-native";
+import { ThemedText } from "../components/ThemedText/ThemedText";
+import { useThemeColor } from "../hooks/useThemeColor";
 
-const StarterComponent = () => (
-  <View style={{ padding: 16 }}>
-    <Text>
-      Thanks for trying out Storybook, follow the{" "}
-      <Text
-        style={{
-          color: "blue",
-          textDecorationLine: "underline",
-          textDecorationColor: "blue",
-        }}
-        onPress={() =>
-          Linking.openURL(
-            "https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/",
-          )}
-      >
-        tutorial
-      </Text>{" "}
-      to learn how to create your own stories
-    </Text>
-  </View>
-);
+const StarterComponent = () => {
+  const linkColor = useThemeColor("primary");
+
+  return (
+    <View style={{ padding: 16 }}>
+      <ThemedText>
+        Obrigado por experimentar o Storybook, siga o{" "}
+        <ThemedText
+          style={{
+            color: linkColor,
+            textDecorationColor: linkColor,
+          }}
+          type="link"
+          onPress={() =>
+            Linking.openURL(
+              "https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/",
+            )}
+        >
+          tutorial
+        </ThemedText>{" "}
+        para aprender a criar suas próprias histórias
+      </ThemedText>
+    </View>
+  );
+};
 
 const meta = {
   title: "Welcome",

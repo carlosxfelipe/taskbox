@@ -69,7 +69,11 @@ export const CustomColors: Story = {
 export const Styled: Story = {
   args: {
     title: "Styled button",
-    buttonStyle: { borderRadius: 20, paddingVertical: 16, paddingHorizontal: 28 },
+    buttonStyle: {
+      borderRadius: 20,
+      paddingVertical: 16,
+      paddingHorizontal: 28,
+    },
     textStyle: { fontSize: 18, letterSpacing: 1 },
   },
 };

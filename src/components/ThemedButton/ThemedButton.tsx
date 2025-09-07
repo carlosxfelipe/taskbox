@@ -4,9 +4,9 @@ import {
   Pressable,
   type PressableProps,
   StyleSheet,
+  type TextStyle,
   View,
   type ViewStyle,
-  type TextStyle,
 } from "react-native";
 import { useThemeColor } from "../../hooks/useThemeColor";
 import { getContrastingTextColor } from "../../utils/colors";
