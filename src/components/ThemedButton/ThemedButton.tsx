@@ -4,14 +4,14 @@ import {
   Pressable,
   type PressableProps,
   StyleSheet,
-  Text,
-  type TextStyle,
   View,
   type ViewStyle,
+  type TextStyle,
 } from "react-native";
 import { useThemeColor } from "../../hooks/useThemeColor";
 import { getContrastingTextColor } from "../../utils/colors";
 import { Icon, MaterialCommunityIconName } from "../Icon/Icon";
+import { ThemedText } from "../ThemedText/ThemedText";
 
 type ThemedButtonProps = PressableProps & {
   title: string;
@@ -71,9 +71,12 @@ export function ThemedButton({
             />
           </View>
         )}
-        <Text style={[styles.text, { color: contrastColor }, textStyle]}>
+        <ThemedText
+          style={[styles.text, { color: contrastColor }, textStyle]}
+          type="defaultSemiBold"
+        >
           {title}
-        </Text>
+        </ThemedText>
         {iconRightName && (
           <View style={styles.icon}>
             <Icon
